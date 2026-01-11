@@ -1,13 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>China True Local</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China True Local | True Local, True Experience</title>
+    <meta name="description" content="Practical, honest China travel guidance: payments, transportation, and step-by-step city guides beyond tourist traps.">
+    
+    <!-- 1. 引入 Tailwind CSS (快速排版) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. 引入 Google Fonts (品牌字体) -->
+    <!-- Caveat: 手写体，用于标题，呼应你的 Logo -->
+    <!-- Inter: 正文体，易读性高 -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- 3. 配置品牌颜色 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        hand: ['Caveat', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#2D2D2D',     // 墨色
+                            red: '#C84C44',       // 故宫红/印泥红 (代替科技蓝)
+                            cream: '#F9F9F7',     // 米宣纸色 (背景)
+                            gray: '#888888',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <h1>China True Local</h1>
-  <p>Real China, explained for real travelers.</p>
-  <p>This site is under construction.</p>
+<body class="bg-brand-cream text-brand-black antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo 区域 -->
+                <div class="flex items-center gap-3">
+                    <!-- 请确保 logo.png 在同目录下 -->
+                    <img src="logo.png" alt="China True Local Logo" class="h-10 w-auto object-contain">
+                    <div class="hidden md:block">
+                        <span class="block font-hand text-2xl font-bold leading-none">China True Local</span>
+                        <span class="block text-[10px] tracking-widest uppercase text-brand-gray">Authentic Experiences</span>
+                    </div>
+                </div>
+                <!-- 菜单 -->
+                <div class="flex gap-6 text-sm font-medium text-gray-600">
+                    <a href="#start" class="hover:text-brand-red transition">Start Here</a>
+                    <a href="#guides" class="hover:text-brand-red transition">Shop Guides</a>
+                    <a href="#contact" class="hover:text-brand-red transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域：视觉冲击 -->
+    <header class="relative w-full h-[85vh] flex items-center justify-center overflow-hidden">
+        <!-- 背景图：建议使用一张有质感的中国街道或山水图，命名为 hero-bg.jpg -->
+        <div class="absolute inset-0 z-0">
+            <img src="hero-bg.jpg" alt="Authentic China Streets" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10">
+            <span class="inline-block py-1 px-3 border border-white/30 rounded-full text-white/90 text-xs tracking-wider uppercase mb-6 backdrop-blur-sm">
+                Updated for 2025 Travel
+            </span>
+            <h1 class="font-hand text-6xl md:text-8xl text-white mb-6 font-bold shadow-sm">
+                Real China, <br/> Explained.
+            </h1>
+            <p class="text-white/90 text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto leading-relaxed">
+                Stop relying on outdated blogs. Get practical, honest guidance for Western travelers: 
+                <span class="font-semibold text-white">Alipay setup, high-speed trains, and step-by-step city guides</span> beyond the tourist traps.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#guides" class="bg-brand-red hover:bg-red-700 text-white font-semibold py-4 px-10 rounded-full transition duration-300 shadow-xl transform hover:-translate-y-1">
+                    Browse City Guides
+                </a>
+                <a href="#start" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold py-4 px-10 rounded-full transition duration-300">
+                    Read Essentials
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 信任背书区 -->
+    <section class="py-10 border-b border-gray-200 bg-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-sm text-gray-400 uppercase tracking-widest mb-6 font-semibold">Why Travelers Trust Us</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-3xl mb-2">🧭</div>
+                    <h3 class="font-bold text-gray-800">No "Tourist Traps"</h3>
+                    <p class="text-sm text-gray-500 mt-1">We skip the souvenir shops and take you to where locals actually eat.</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl mb-2">💳</div>
+                    <h3 class="font-bold text-gray-800">Payment Ready</h3>
+                    <p class="text-sm text-gray-500 mt-1">Cash is gone. We teach you how to master Alipay & WeChat Pay instantly.</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl mb-2">📍</div>
+                    <h3 class="font-bold text-gray-800">Local Authors</h3>
+                    <p class="text-sm text-gray-500 mt-1">Written by locals who live in the city, not travel editors in New York.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心产品展示区：杭州攻略 -->
+    <section id="guides" class="py-24 px-4 bg-brand-cream">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-hand text-5xl font-bold text-brand-black mb-4">Featured Guide</h2>
+                <p class="text-gray-600">The most requested itinerary for 2025</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
+                <!-- 左侧：封面图区域 -->
+                <div class="w-full md:w-5/12 bg-gray-100 relative group">
+                    <!-- 你的 PDF 封面图，建议做成书本样机 -->
+                    <img src="https://via.placeholder.com/600x800?text=Hangzhou+Guide+Cover" alt="Hangzhou Guide Book" class="w-full h-full object-cover object-center transition duration-500 group-hover:scale-105">
+                    <div class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
+                        Best Seller
+                    </div>
+                </div>
+
+                <!-- 右侧：详情内容 -->
+                <div class="w-full md:w-7/12 p-8 md:p-12 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-brand-black mb-2">The Ultimate Hangzhou Local Guide</h3>
+                    <p class="text-sm text-gray-500 mb-6 font-mono">PDF Download • 2025 Edition • 85 Pages</p>
+                    
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Hangzhou is more than just West Lake. Don't waste time getting lost in crowds. 
+                        This guide is your personal local friend ("Little Peach") in your pocket.
+                    </p>
+
+                    <!-- 卖点列表 (基于你的中文截图翻译) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span class="text-brand-red mt-1">✓</span>
+                            <span class="text-sm text-gray-700"><strong>Smart Itineraries:</strong> 1, 2, & 3-day logical routes.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-brand-red mt-1">✓</span>
+                            <span class="text-sm text-gray-700"><strong>Logistics Solved:</strong> Subway maps & hotel areas.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-brand-red mt-1">✓</span>
+                            <span class="text-sm text-gray-700"><strong>Hidden Gems:</strong> Quiet tea fields & temples.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-brand-red mt-1">✓</span>
+                            <span class="text-sm text-gray-700"><strong>Money Saving:</strong> Temple passes & park card hacks.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-brand-red mt-1">✓</span>
+                            <span class="text-sm text-gray-700"><strong>Local Dining:</strong> Authentic dishes, no tourist traps.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-brand-red mt-1">✓</span>
+                            <span class="text-sm text-gray-700"><strong>Q&A Support:</strong> Get answers to specific worries.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+                        <div>
+                            <span class="block text-3xl font-bold text-brand-black">$9.90</span>
+                            <span class="text-xs text-gray-400 line-through">$19.90</span>
+                        </div>
+                        <!-- 这里的 href 换成你的 Gumroad 链接 -->
+                        <a href="#" class="bg-brand-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition flex items-center gap-2">
+                            <span>Get Instant Access</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Here / 知识库 (SEO 内容) -->
+    <section id="start" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-hand text-4xl font-bold mb-4">First Time in China?</h2>
+                <p class="text-gray-600">Start with these 3 essentials before you fly.</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="group border border-gray-200 rounded-xl p-6 hover:border-brand-red/30 hover:shadow-lg transition cursor-pointer">
+                    <h3 class="text-xl font-bold mb-2 flex justify-between items-center group-hover:text-brand-red">
+                        1. Payment Apps are Mandatory
+                        <span class="text-gray-300 group-hover:text-brand-red">→</span>
+                    </h3>
+                    <p class="text-gray-500 text-sm">Visa/Mastercard works rarely directly. You MUST link them to Alipay or WeChat Pay before arrival.</p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="group border border-gray-200 rounded-xl p-6 hover:border-brand-red/30 hover:shadow-lg transition cursor-pointer">
+                    <h3 class="text-xl font-bold mb-2 flex justify-between items-center group-hover:text-brand-red">
+                        2. You need a VPN or Roaming
+                        <span class="text-gray-300 group-hover:text-brand-red">→</span>
+                    </h3>
+                    <p class="text-gray-500 text-sm">Google Maps, Gmail, and Instagram are blocked. We recommend buying an eSIM (like Holafly) or a reliable VPN.</p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="group border border-gray-200 rounded-xl p-6 hover:border-brand-red/30 hover:shadow-lg transition cursor-pointer">
+                    <h3 class="text-xl font-bold mb-2 flex justify-between items-center group-hover:text-brand-red">
+                        3. Don't trust Apple Maps entirely
+                        <span class="text-gray-300 group-hover:text-brand-red">→</span>
+                    </h3>
+                    <p class="text-gray-500 text-sm">For navigation, Apple Maps is okay, but Amap (Gaode) is better if you can read a little Chinese. We explain how to use it in our guides.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact" class="bg-brand-black text-white py-12 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="font-hand text-4xl mb-6">China True Local</h2>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto">
+                Authentic travel experiences, crafted by locals. <br>
+                Hangzhou • Shanghai • Beijing • Chengdu
+            </p>
+            
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="mailto:hello@chinatruelocal.com" class="text-white hover:text-brand-red transition border border-gray-600 px-6 py-2 rounded-full text-sm">
+                    hello@chinatruelocal.com
+                </a>
+            </div>
+
+            <p class="text-xs text-gray-600">© 2025 China True Local. All rights reserved. <br>Design by Locals.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
