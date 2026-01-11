@@ -32,6 +32,11 @@
             }
         }
     </script>
+    <style>
+        html {
+            scroll-behavior: smooth; /* 启用平滑滚动 */
+        }
+    </style>
 </head>
 <body class="bg-brand-cream text-brand-black antialiased selection:bg-brand-red selection:text-white">
 
@@ -39,19 +44,19 @@
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo: 路径已修正 -->
+                <!-- Logo: 使用根路径 /images/ -->
                 <div class="flex items-center gap-3">
-                    <a href="index.html">
-                        <img src="images/my-logo-final.png" alt="China True Local Logo" class="h-10 w-auto object-contain">
+                    <a href="/">
+                        <img src="/images/my-logo-final.png" alt="China True Local Logo" class="h-10 w-auto object-contain">
                     </a>
                     <div class="hidden md:block">
-                        <a href="index.html" class="block font-hand text-2xl font-bold leading-none hover:text-brand-red transition">China True Local</a>
+                        <a href="/" class="block font-hand text-2xl font-bold leading-none hover:text-brand-red transition">China True Local</a>
                     </div>
                 </div>
-                <!-- 菜单 -->
+                <!-- 菜单: 使用根路径 / -->
                 <div class="flex gap-6 text-sm font-medium text-gray-600">
-                    <a href="index.html" class="hover:text-brand-red transition">Home</a>
-                    <a href="index.html#guides" class="hover:text-brand-red transition">Shop Guides</a>
+                    <a href="/" class="hover:text-brand-red transition">Home</a>
+                    <a href="/#guides" class="hover:text-brand-red transition">Shop Guides</a>
                 </div>
             </div>
         </div>
@@ -59,18 +64,31 @@
 
     <!-- 页面标题区 -->
     <header class="relative bg-brand-black text-white py-24 px-4 text-center overflow-hidden">
-        <!-- 背景图: 使用首页同款长城图，保持风格统一 -->
+        <!-- 背景图: 使用根路径 /images/ -->
         <div class="absolute inset-0 z-0">
-            <img src="images/bg-greatwall.jpg" alt="China Background" class="w-full h-full object-cover opacity-30">
+            <img src="/images/bg-greatwall.jpg" alt="China Background" class="w-full h-full object-cover opacity-30">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-black/80 to-brand-black/90"></div>
         </div>
         
-        <div class="relative z-10">
+        <div class="relative z-10 max-w-3xl mx-auto">
             <h1 class="font-hand text-5xl md:text-6xl font-bold mb-6 text-brand-cream">First Time in China?</h1>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p class="text-gray-300 text-lg mb-10 leading-relaxed">
                 Don't panic. Here are the 3 absolute essentials you must set up <br class="hidden md:block">
                 <span class="text-white font-semibold underline decoration-brand-red decoration-2 underline-offset-4">before you board the plane</span>.
             </p>
+
+            <!-- 新增：页内目录导航 (Anchor Links) -->
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
+                <a href="#payment" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/20 rounded-full px-6 py-2 transition flex items-center gap-2">
+                    <span class="text-brand-red">1.</span> Payments
+                </a>
+                <a href="#internet" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/20 rounded-full px-6 py-2 transition flex items-center gap-2">
+                    <span class="text-blue-400">2.</span> Internet
+                </a>
+                <a href="#maps" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/20 rounded-full px-6 py-2 transition flex items-center gap-2">
+                    <span class="text-green-400">3.</span> Maps
+                </a>
+            </div>
         </div>
     </header>
 
@@ -78,7 +96,7 @@
     <main class="max-w-4xl mx-auto px-4 py-16 space-y-16">
 
         <!-- 问题 1: 支付 -->
-        <section id="payment" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transform transition hover:shadow-md">
+        <section id="payment" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transform transition hover:shadow-md scroll-mt-28">
             <div class="bg-brand-red/5 p-6 border-b border-brand-red/10 flex items-center gap-4">
                 <span class="bg-brand-red text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl shadow-sm">1</span>
                 <h2 class="text-2xl font-bold text-brand-black">Money & Payments</h2>
@@ -103,7 +121,7 @@
         </section>
 
         <!-- 问题 2: 网络 -->
-        <section id="internet" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transform transition hover:shadow-md">
+        <section id="internet" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transform transition hover:shadow-md scroll-mt-28">
             <div class="bg-blue-50 p-6 border-b border-blue-100 flex items-center gap-4">
                 <span class="bg-brand-black text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl shadow-sm">2</span>
                 <h2 class="text-2xl font-bold text-brand-black">Internet & "The Firewall"</h2>
@@ -129,32 +147,39 @@
                             <p class="text-sm">If you use local Wi-Fi, you need a VPN app. <strong>LetsVPN</strong> is currently the most reliable for China (Astrill is pricey but solid).</p>
                         </div>
                     </div>
-                    <p><strong>Map Apps:</strong> Apple Maps works okay in English. For Android users, download "Amap" (Gaode) if you can read a little Chinese, or stick to MetroMan for subways.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 问题 3: 交通 -->
-        <section id="trains" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transform transition hover:shadow-md">
+        <!-- 问题 3: 地图 (原火车部分已替换) -->
+        <section id="maps" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transform transition hover:shadow-md scroll-mt-28">
             <div class="bg-green-50 p-6 border-b border-green-100 flex items-center gap-4">
                 <span class="bg-brand-black text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl shadow-sm">3</span>
-                <h2 class="text-2xl font-bold text-brand-black">Trains & Transport</h2>
+                <h2 class="text-2xl font-bold text-brand-black">Maps & Navigation</h2>
             </div>
             <div class="p-8">
                 <p class="text-lg text-gray-700 mb-6 font-medium">
-                    "How do I book train tickets?"
+                    "Google Maps is blocked. What do I use?" <br>
+                    <span class="text-brand-red font-bold">Don't trust Apple Maps entirely.</span>
                 </p>
                 <div class="space-y-4 text-gray-600 leading-relaxed">
-                    <ul class="list-disc pl-5 space-y-2 marker:text-green-600">
-                        <li><strong>Official App:</strong> Use <strong>"Trip.com"</strong>. It's the international version of China's biggest travel agency. They charge a small fee but have perfect English support.</li>
-                        <li><strong>Railway 12306:</strong> This is the official government app. It has an English version now, but the interface can be glitchy for foreigners.</li>
-                        <li><strong>No Paper Tickets:</strong> You don't need to print anything. Your <strong>Passport</strong> is your ticket. Just show your passport at the manual gate (or scan it at the machine).</li>
+                    <ul class="list-disc pl-5 space-y-4 marker:text-green-600">
+                        <li>
+                            <strong>Amap (Gaode Ditu):</strong> The gold standard. It has the most accurate data for taxis and walking directions. 
+                            <span class="block text-sm text-gray-500 mt-1">⚠️ Note: It is in Chinese only. We recommend learning to match the visual icons, or screenshotting destinations to show drivers.</span>
+                        </li>
+                        <li>
+                            <strong>Apple Maps:</strong> It works without a VPN and has English labels. It's "okay" for general direction, but often misses new subway exits or small shops.
+                        </li>
+                        <li>
+                            <strong>MetroMan:</strong> The absolute best app for subway navigation in English. It works offline and tells you exactly how much tickets cost.
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 底部引导购买区 (升级版) -->
+        <!-- 底部引导购买区 -->
         <div class="bg-brand-black text-white rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
             <!-- 装饰背景 -->
             <div class="absolute top-0 right-0 w-64 h-64 bg-brand-red rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
@@ -165,7 +190,7 @@
                 <p class="text-gray-300 mb-8 text-lg">
                     Our city guides include detailed screenshots on <span class="text-white font-bold">how to set up Alipay</span>, step-by-step VPN installation, and even how to read a Chinese menu.
                 </p>
-                <a href="index.html#guides" class="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:-translate-y-1">
+                <a href="/#guides" class="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:-translate-y-1">
                     <span>Browse City Guides</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -173,9 +198,9 @@
                 </a>
             </div>
 
-            <!-- 右侧：书本封面小图 (引用 images/travel-guide.png) -->
+            <!-- 右侧：书本封面小图 (使用根路径) -->
             <div class="w-32 md:w-40 shrink-0 transform rotate-6 hover:rotate-0 transition duration-500 z-10">
-                 <img src="images/travel-guide.png" alt="Travel Guide Book" class="rounded shadow-lg w-full border-2 border-white/20">
+                 <img src="/images/travel-guide.png" alt="Travel Guide Book" class="rounded shadow-lg w-full border-2 border-white/20">
             </div>
         </div>
 
