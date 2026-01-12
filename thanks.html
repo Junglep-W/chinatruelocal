@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent! | China True Local</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        hand: ['Patrick Hand', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#2D2D2D',
+                            red: '#C84C44',
+                            cream: '#F9F9F7',
+                            gray: '#888888',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-cream text-brand-black antialiased flex flex-col min-h-screen">
+
+    <!-- NAV (保持一致性) -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <a href="/">
+                        <img src="/images/my-logo-final.png" alt="China True Local Logo" class="h-10 w-auto object-contain">
+                    </a>
+                    <div class="hidden md:block">
+                        <a href="/" class="block font-hand text-2xl font-bold leading-none hover:text-brand-red transition tracking-wide">China True Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="max-w-md w-full text-center">
+            
+            <!-- 成功动画图标 -->
+            <div class="w-24 h-24 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+
+            <h1 class="font-hand text-5xl font-bold mb-4 text-brand-black">Message Sent!</h1>
+            
+            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                Thanks for reaching out. We've received your message and will get back to you within 24-48 hours.
+            </p>
+
+            <div class="flex flex-col gap-4">
+                <a href="/" class="w-full bg-brand-black text-white font-bold py-3 px-6 rounded-full hover:bg-gray-800 transition transform hover:-translate-y-1 shadow-lg">
+                    Back to Home
+                </a>
+                <a href="/#guides" class="w-full bg-white text-brand-black border border-gray-200 font-bold py-3 px-6 rounded-full hover:bg-gray-50 transition">
+                    Continue Shopping Guides
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-xs text-gray-400">
+        © 2025 China True Local
+    </footer>
+
+</body>
+</html>
